@@ -258,7 +258,7 @@ class TabularDialog(PygubuAppUI):
         
     def copy_data_numpy(self, dataset: "TabularDataset"):
         def sanitize_name(name: str) -> str:
-            return re.sub('\W|^(?=\d)', '_', name)
+            return re.sub('\\W|^(?=\\d)', '_', name)
         def fmt(x) -> str:
             return f'{x:.{TabularDialog.DISPLAY_PREC}g}'
         py = 'import numpy as np\n'
